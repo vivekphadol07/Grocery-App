@@ -9,7 +9,7 @@ export const Footer = () => {
         {/* Logo and Description */}
         <div className="md:w-1/3">
           <img 
-          src="/assets/logogreen.png" 
+          src={`${import.meta.env.BASE_URL}/logogreen.png`} 
           alt="GreenCart Logo" 
           className="w-[200px] h-auto mb-4 " 
           />
