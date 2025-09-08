@@ -3,7 +3,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <div
       className="
@@ -57,11 +57,18 @@ export const Navbar = () => {
         </Link>
 
         {/* Login Button */}
-        <Link to="/login">
-          <button className="rounded-[50px] bg-[#16A34A] px-4 py-1 text-white text-sm sm:text-base hover:bg-green-700 transition">
-            Login
-          </button>
-        </Link>
+
+        {
+          isLoggedIn ? (<button onClick={() => setIsLoggedIn(false)} className="rounded-[50px] bg-[#16A34A] px-4 py-1 text-white text-sm sm:text-base hover:bg-green-700 transition">
+            Logout
+          </button>) :
+            (<Link to="/login">
+              <button className="rounded-[50px] bg-[#16A34A] px-4 py-1 text-white text-sm sm:text-base hover:bg-green-700 transition">
+                Login
+              </button>
+            </Link>)
+        }
+
       </div>
     </div>
   );

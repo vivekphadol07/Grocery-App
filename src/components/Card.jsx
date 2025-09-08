@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { add, decrement, increment } from "../redux/slices/CartSlice";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa"; 
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 export const Card = ({ item, isLoggedIn }) => {
   const dispatch = useDispatch();
@@ -67,14 +67,11 @@ export const Card = ({ item, isLoggedIn }) => {
             ₹{item.price}
           </span>
 
-          {quantity >= 1 ? (
-            <div className="flex items-center  border border-gray-300 rounded-md">
+          {quantity > 0 ? (
+            <div className="flex items-center border border-gray-300 rounded-md">
               <button
                 onClick={() => dispatch(decrement(item.id))}
-                disabled={quantity <= 1}
-                className={`px-2 py-1 text-gray-500 text-xs hover:text-green-600 focus:outline-none ${
-                  quantity <= 1 ? "opacity-50 cursor-not-allowed" : ""
-                }`}
+                className="px-2 py-1 text-gray-500 text-xs hover:text-green-600 focus:outline-none"
               >
                 -
               </button>

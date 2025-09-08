@@ -24,7 +24,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="overflow-hidden">
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Routes>
         <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
         
