@@ -26,7 +26,7 @@ const App = () => {
     <div className="overflow-hidden">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Routes>
-        <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
+        <Route path=" " element={<Home isLoggedIn={isLoggedIn} />} />
         
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
