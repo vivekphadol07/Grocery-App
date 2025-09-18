@@ -26,30 +26,30 @@ const App = () => {
     <div className="overflow-hidden">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Routes>
-        <Route path=" " element={<Home isLoggedIn={isLoggedIn} />} />
+        <Route path="/Grocery-App/" element={<Home isLoggedIn={isLoggedIn} />} />
         
-        <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/Grocery-App/about" element={<About />} />
+        <Route path="/Grocery-App/cart" element={<Cart />} />
         <Route
-          path="/login"
+          path="/Grocery-App/login"
           element={<Login setIsLoggedIn={setIsLoggedIn} />}
         />
         <Route
-          path="/signup"
+          path="/Grocery-App/signup"
           element={<Signup setIsLoggedIn={setIsLoggedIn} />}
         />
         <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
-          <Route path="/contactus" element={<ContactUs isLoggedIn={isLoggedIn} />} />
-          <Route path="/bakery" element={<Bakery isLoggedIn={isLoggedIn} />} />
-          <Route path="/dairy" element={<Dairy isLoggedIn={isLoggedIn} />} />
-          <Route path="/drinks" element={<Drinks isLoggedIn={isLoggedIn} />} />
-          <Route path="/fruits" element={<Fruits isLoggedIn={isLoggedIn} />} />
-          <Route path="/grains" element={<Grains isLoggedIn={isLoggedIn} />} />
-          <Route path="/instant"element={<Instant isLoggedIn={isLoggedIn} />} />
-          <Route path="/vegitable"element={<Vegitable isLoggedIn={isLoggedIn} />} />
-          <Route path="/allproducts" element={<AllProducts isLoggedIn={isLoggedIn}/>} />
-          <Route path="hotdeals" element={<HotDeals isLoggedIn={isLoggedIn}/>} />
-          <Route path="/bestseller" element={<BestSeller isLoggedIn={isLoggedIn}/>} />
+          <Route path="/Grocery-App/contactus" element={<ContactUs isLoggedIn={isLoggedIn} />} />
+          <Route path="/Grocery-App/bakery" element={<Bakery isLoggedIn={isLoggedIn} />} />
+          <Route path="/Grocery-App/dairy" element={<Dairy isLoggedIn={isLoggedIn} />} />
+          <Route path="/Grocery-App/drinks" element={<Drinks isLoggedIn={isLoggedIn} />} />
+          <Route path="/Grocery-App/fruits" element={<Fruits isLoggedIn={isLoggedIn} />} />
+          <Route path="/Grocery-App/grains" element={<Grains isLoggedIn={isLoggedIn} />} />
+          <Route path="/Grocery-App/instant"element={<Instant isLoggedIn={isLoggedIn} />} />
+          <Route path="/Grocery-App/vegitable"element={<Vegitable isLoggedIn={isLoggedIn} />} />
+          <Route path="/Grocery-App/allproducts" element={<AllProducts isLoggedIn={isLoggedIn}/>} />
+          <Route path="/Grocery-App/hotdeals" element={<HotDeals isLoggedIn={isLoggedIn}/>} />
+          <Route path="/Grocery-App/bestseller" element={<BestSeller isLoggedIn={isLoggedIn}/>} />
         </Route>
       </Routes>
     </div>

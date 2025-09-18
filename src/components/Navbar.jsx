@@ -25,15 +25,15 @@ export const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
       {/* Nav Links + Search + Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-x-5 mt-2 sm:mt-0">
-        <Link to="/">
+        <Link to="/Grocery-App/">
           <p className="hover:text-green-600">Home</p>
         </Link>
 
-        <Link to="/about">
+        <Link to="/Grocery-App/about">
           <p className="hover:text-green-600">About</p>
         </Link>
 
-        <Link to="/contactus">
+        <Link to="/Grocery-App/contactus">
           <p className="hover:text-green-600">Contact</p>
         </Link>
 
@@ -49,7 +49,7 @@ export const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         </div>
 
         {/* Cart */}
-        <Link to="/cart" className="flex justify-center">
+        <Link to="/Grocery-App/cart" className="flex justify-center">
           <FiShoppingCart
             size={25}
             className="text-black hover:text-green-600"
@@ -62,7 +62,7 @@ export const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
           isLoggedIn ? (<button onClick={() => setIsLoggedIn(false)} className="rounded-[50px] bg-[#16A34A] px-4 py-1 text-white text-sm sm:text-base hover:bg-green-700 transition">
             Logout
           </button>) :
-            (<Link to="/login">
+            (<Link to="/Grocery-App/login">
               <button className="rounded-[50px] bg-[#16A34A] px-4 py-1 text-white text-sm sm:text-base hover:bg-green-700 transition">
                 Login
               </button>

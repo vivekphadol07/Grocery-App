@@ -26,11 +26,11 @@ export const Footer = () => {
           <div>
             <h1 className="font-semibold text-gray-800 mb-3">Quick Links</h1>
             <div className="flex flex-col gap-2">
-              <Link to="/" className="hover:text-green-600">Home</Link>
-              <Link to="/" className="hover:text-green-600">Category</Link>
-              <Link to="/" className="hover:text-green-600">Best Seller</Link>
-              <Link to="/" className="hover:text-green-600">Hot Deals</Link>
-              <Link to="/" className="hover:text-green-600">FAQ</Link>
+              <Link to="/Grocery-App/" className="hover:text-green-600">Home</Link>
+              <Link to="/Grocery-App/category" className="hover:text-green-600">Category</Link>
+              <Link to="/Grocery-App/bestseller" className="hover:text-green-600">Best Seller</Link>
+              <Link to="/Grocery-App/hotdeals" className="hover:text-green-600">Hot Deals</Link>
+              <Link to="/Grocery-App/" className="hover:text-green-600">FAQ</Link>
             </div>
           </div>
 
@@ -38,11 +38,11 @@ export const Footer = () => {
           <div>
             <h1 className="font-semibold text-gray-800 mb-3">Need Help?</h1>
             <div className="flex flex-col gap-2">
-              <Link to="/contactus" className="hover:text-green-600">Delivery Information</Link>
-              <Link to="/contactus" className="hover:text-green-600">Return & Refund</Link>
-              <Link to="/contactus" className="hover:text-green-600">Payment Methods</Link>
-              <Link to="/contactus" className="hover:text-green-600">Track Your Order</Link>
-              <Link to="/contactus" className="hover:text-green-600">Contact Us</Link>
+              <Link to="/Grocery-App/contactus" className="hover:text-green-600">Delivery Information</Link>
+              <Link to="/Grocery-App/contactus" className="hover:text-green-600">Return & Refund</Link>
+              <Link to="/Grocery-App/contactus" className="hover:text-green-600">Payment Methods</Link>
+              <Link to="/Grocery-App/contactus" className="hover:text-green-600">Track Your Order</Link>
+              <Link to="/Grocery-App/contactus" className="hover:text-green-600">Contact Us</Link>
             </div>
           </div>
 
@@ -50,10 +50,10 @@ export const Footer = () => {
           <div>
             <h1 className="font-semibold text-gray-800 mb-3">Follow Us</h1>
             <div className="flex flex-col gap-2">
-              <Link to="/" className="hover:text-green-600">Instagram</Link>
-              <Link to="/" className="hover:text-green-600">Twitter</Link>
-              <Link to="/" className="hover:text-green-600">Facebook</Link>
-              <Link to="/" className="hover:text-green-600">YouTube</Link>
+              <Link to="/Grocery-App/" className="hover:text-green-600">Instagram</Link>
+              <Link to="/Grocery-App/" className="hover:text-green-600">Twitter</Link>
+              <Link to="/Grocery-App/" className="hover:text-green-600">Facebook</Link>
+              <Link to="/Grocery-App/" className="hover:text-green-600">YouTube</Link>
             </div>
           </div>
         </div>

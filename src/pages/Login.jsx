@@ -92,7 +92,7 @@ export const Login = ({ setIsLoggedIn }) => {
         {/* Create account */}
         <p className="text-center mt-6 text-gray-600">
           Create New Account?{" "}
-          <Link to="/signup">
+          <Link to="/Grocery-App/signup">
             <span className="text-green-600 cursor-pointer hover:underline">
               Click here
             </span>

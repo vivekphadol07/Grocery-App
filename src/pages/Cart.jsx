@@ -43,7 +43,7 @@ export const Cart = () => {
             Looks like you haven’t added anything yet.
           </p>
 
-          <Link to="/">
+          <Link to="/Grocery-App/">
             <button className="bg-[#4FBF8B] mt-7 px-4 py-3 text-white rounded-lg hover:bg-green-600 transition">
               Shop Now
             </button>

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa6";
 import { Card } from "./Card";
+import { Link } from "react-router-dom";
 
 export const HomeCardSection = ({ title, items, isLoggedIn }) => {
   const scrollContainerRef = useRef(null);
@@ -18,7 +19,9 @@ export const HomeCardSection = ({ title, items, isLoggedIn }) => {
 
   return (
     <div className="mt-10 mb-6 w-full max-w-[1250px] mx-auto">
-      <h1 className="text-xl font-semibold mb-5">{title}</h1>
+      <Link to={`/Grocery-App/${title}`}>
+        <h1 className="text-xl font-semibold mb-5">{title}</h1>
+      </Link>
 
       <div className="relative">
         {/* Left Button */}

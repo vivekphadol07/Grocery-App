@@ -12,7 +12,7 @@ export const BestSellerSection = ({ isLoggedIn }) => {
 
   return (
     <div className="mt-10 mb-6 w-full max-w-[1250px] mx-auto">
-        <Link to="/bestseller">
+        <Link to="/Grocery-App/bestseller">
             <h1 className="text-2xl font-semibold mb-7">Best Sellers</h1>
         </Link>
 

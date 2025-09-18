@@ -27,7 +27,7 @@ export const HotdealsSection = ({ isLoggedIn }) => {
 
   return (
     < div className="mt-10 mb-6 w-full max-w-[1250px] mx-auto">
-      <Link to="/hotdeals">
+      <Link to="/Grocery-App/hotdeals">
           <h1 className="text-2xl font-semibold mb-7">Hot Deals</h1>
       </Link>
       <HomeCardSection items={cheapestItems} isLoggedIn={isLoggedIn} />

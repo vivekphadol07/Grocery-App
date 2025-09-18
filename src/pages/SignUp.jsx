@@ -173,7 +173,7 @@ export const Signup = ({setIsLoggedIn}) => {
           {/* login link */}
           <p className="text-center mt-6 text-gray-600">
             Already Have an Account?{" "}
-            <Link to="/login">
+            <Link to="/Grocery-App/login">
               <span className="text-green-600 cursor-pointer hover:underline">
                 Click here
               </span>
