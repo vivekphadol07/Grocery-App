@@ -27,7 +27,7 @@ export const Footer = () => {
             <h1 className="font-semibold text-gray-800 mb-3">Quick Links</h1>
             <div className="flex flex-col gap-2">
               <Link to="/Grocery-App/" className="hover:text-green-600">Home</Link>
-              <Link to="/Grocery-App/category" className="hover:text-green-600">Category</Link>
+              <Link to="/Grocery-App/allproducts" className="hover:text-green-600">Category</Link>
               <Link to="/Grocery-App/bestseller" className="hover:text-green-600">Best Seller</Link>
               <Link to="/Grocery-App/hotdeals" className="hover:text-green-600">Hot Deals</Link>
               <Link to="/Grocery-App/" className="hover:text-green-600">FAQ</Link>

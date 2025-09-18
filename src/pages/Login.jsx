@@ -81,12 +81,15 @@ export const Login = ({ setIsLoggedIn }) => {
           </p>
 
           {/* Login Button */}
-          <button
-            type="submit"
-            className="bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"
-          >
-            Login
-          </button>
+          <Link to="/Grocery-App">
+            <button
+              type="submit"
+              className="bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"
+            >
+              Login
+            </button>
+          </Link>
+
         </form>
 
         {/* Create account */}
