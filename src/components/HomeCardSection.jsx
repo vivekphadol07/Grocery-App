@@ -19,9 +19,11 @@ export const HomeCardSection = ({ title, items, isLoggedIn }) => {
 
   return (
     <div className="mt-10 mb-6 w-full max-w-[1250px] mx-auto">
-      <Link to={`/Grocery-App/${title}`}>
+      {/* <Link to={`/Grocery-App/${title}`}>
         <h1 className="text-xl font-semibold mb-5">{title}</h1>
-      </Link>
+      </Link> */}
+
+      <h1 className="text-xl font-semibold mb-5">{title}</h1>
 
       <div className="relative">
         {/* Left Button */}

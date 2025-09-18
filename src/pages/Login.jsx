@@ -27,7 +27,7 @@ export const Login = ({ setIsLoggedIn }) => {
     setIsLoggedIn(true);
     toast.success("Logged In Successfully");
     console.log("Login Data:", formData);
-    navigate("/");
+    navigate("/Grocery-App/");
   }
 
   return (
@@ -81,14 +81,12 @@ export const Login = ({ setIsLoggedIn }) => {
           </p>
 
           {/* Login Button */}
-          <Link to="/Grocery-App">
-            <button
-              type="submit"
-              className="bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"
-            >
-              Login
-            </button>
-          </Link>
+          <button
+            type="submit"
+            className="bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"
+          >
+            Login
+          </button>
 
         </form>
 

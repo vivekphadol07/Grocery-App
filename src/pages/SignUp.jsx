@@ -37,7 +37,7 @@ export const Signup = ({setIsLoggedIn}) => {
 
     console.log("Account Data:", formData);
 
-    navigate("/");
+    navigate("/Grocery-App/");
   }
 
   return (
