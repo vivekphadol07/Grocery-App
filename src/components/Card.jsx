@@ -16,7 +16,7 @@ export const Card = ({ item, isLoggedIn }) => {
 
   const addToCart = () => {
     if (!isLoggedIn) {
-      navigate("/login");
+      navigate("/Grocery-App//login");
       return;
     }
     dispatch(add(item));
