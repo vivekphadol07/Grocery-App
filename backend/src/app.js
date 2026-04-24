@@ -11,6 +11,10 @@ import uploadRoutes from "./routes/uploadRoutes.js";
 import paymentRoutes from "./routes/paymentRoutes.js";
 import feedbackRoutes from "./routes/feedbackRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+import { connectDB } from "./config/db.js";
+
+// Connect to Database
+connectDB();
 
 const app = express();
 
@@ -23,6 +27,14 @@ app.use(
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan(env.nodeEnv === "development" ? "dev" : "combined"));
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Grocery API is running smoothly",
+    documentation: "Please use /api/health for health checks",
+  });
+});
 
 app.get("/api/health", (req, res) => {
   res.status(200).json({
