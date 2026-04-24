@@ -1,0 +1,12 @@
+{
+  "name": "grocery-app-workspace",
+  "private": true,
+  "scripts": {
+    "install:frontend": "npm --prefix frontend install",
+    "install:backend": "npm --prefix backend install",
+    "install:all": "npm --prefix frontend install && npm --prefix backend install",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "seed:backend": "npm --prefix backend run seed"
+  }
+}
