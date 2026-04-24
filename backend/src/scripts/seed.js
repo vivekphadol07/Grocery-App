@@ -38,6 +38,7 @@ const seedDatabase = async () => {
     adminUser.password = env.adminPassword;
     adminUser.role = "admin";
     adminUser.isActive = true;
+    adminUser.isVerified = true;
     await adminUser.save();
 
     const formattedProducts = productSeed.map((product) => ({
