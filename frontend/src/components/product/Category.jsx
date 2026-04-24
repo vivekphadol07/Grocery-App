@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { resolveImagePath } from "../../utils/productUtils";
 
 export const Category = () => {
   const categories = [
-    { name: "Organic Veggies", path: "vegitable", img: "organic_vegitable_image.png", bg: "from-[#FFF6E5] to-[#FFE8BC]" },
-    { name: "Fresh Fruits", path: "fruits", img: "fresh_fruits_image.png", bg: "from-[#FEE0E0] to-[#FFC9C9]" },
-    { name: "Cold Drinks", path: "beverages", img: "bottles_image.png", bg: "from-[#F0F5DE] to-[#E2EDC1]" },
-    { name: "Instant Food", path: "snacks", img: "maggi_image.png", bg: "from-[#E1F5EC] to-[#C4EBD9]" },
-    { name: "Dairy Products", path: "dairy", img: "dairy_product_image.png", bg: "from-[#FEE6CD] to-[#FFD8B1]" },
-    { name: "Bakery & Breads", path: "bakery", img: "bakery_image.png", bg: "from-[#E0F6FE] to-[#C1EDFD]" },
-    { name: "Grains", path: "grains", img: "grain_image.png", bg: "from-[#F1E3F9] to-[#E3C9F4]" },
+    { name: "Organic Veggies", path: "vegitable", img: "https://res.cloudinary.com/dzczhiz9h/image/upload/v1776622771/grocery_app_products/broccoli.jpg", bg: "from-[#FFF6E5] to-[#FFE8BC]" },
+    { name: "Fresh Fruits", path: "fruits", img: "https://res.cloudinary.com/dzczhiz9h/image/upload/v1776622776/grocery_app_products/apple.jpg", bg: "from-[#FEE0E0] to-[#FFC9C9]" },
+    { name: "Cold Drinks", path: "beverages", img: "https://res.cloudinary.com/dzczhiz9h/image/upload/v1776622787/grocery_app_products/minute_maid_orange_juice.jpg", bg: "from-[#F0F5DE] to-[#E2EDC1]" },
+    { name: "Instant Food", path: "snacks", img: "https://res.cloudinary.com/dzczhiz9h/image/upload/v1776622789/grocery_app_products/maggi_image.png", bg: "from-[#E1F5EC] to-[#C4EBD9]" },
+    { name: "Dairy Products", path: "dairy", img: "https://res.cloudinary.com/dzczhiz9h/image/upload/v1776622796/grocery_app_products/amul_butter.jpg", bg: "from-[#FEE6CD] to-[#FFD8B1]" },
+    { name: "Bakery & Breads", path: "bakery", img: "https://res.cloudinary.com/dzczhiz9h/image/upload/v1776622799/grocery_app_products/Britannia_Whole_Wheat_Bread.jpg", bg: "from-[#E0F6FE] to-[#C1EDFD]" },
+    { name: "Grains", path: "grains", img: "https://res.cloudinary.com/dzczhiz9h/image/upload/v1776622806/grocery_app_products/india_gate_basmati_rice.webp", bg: "from-[#F1E3F9] to-[#E3C9F4]" },
   ];
 
   return (
@@ -53,9 +54,9 @@ export const Category = () => {
             `}>
               <div className="bg-white/40 p-3 rounded-full backdrop-blur-sm mb-3 group-hover:scale-110 transition-transform duration-500">
                 <img
-                  src={`${import.meta.env.BASE_URL}/${cat.img}`}
+                  src={resolveImagePath(cat.img)}
                   alt={cat.name}
-                  className="w-[80px] sm:w-[90px] h-[80px] sm:h-[90px] object-contain drop-shadow-xl"
+                  className="w-[80px] sm:w-[90px] h-[80px] sm:h-[90px] object-contain drop-shadow-xl rounded-full"
                 />
               </div>
               <p className="text-xs sm:text-[13px] font-black text-slate-800 text-center leading-tight">
