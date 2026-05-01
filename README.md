@@ -2,7 +2,7 @@
 
 ## View it live here
 
-[Grocery-App Demo](https://vivekphadol07.github.io/Grocery-App/)
+[Grocery-App Demo](https://grocery-app-o9gz.vercel.app/)
 
 ## Project structure
 
