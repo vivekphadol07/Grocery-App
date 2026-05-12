@@ -15,40 +15,8 @@ export const registerUser = asyncHandler(async (req, res) => {
 
   const existingUser = await User.findOne({ email: email.toLowerCase().trim() });
   if (existingUser) {
-    if (existingUser.isVerified) {
-      res.status(400);
-      throw new Error("User already exists with this email");
-    } else {
-      // If user exists but not verified, just resend OTP and act like we just registered them
-      const otp = Math.floor(100000 + Math.random() * 900000).toString();
-      existingUser.verificationOTP = otp;
-      existingUser.verificationOTPExpires = Date.now() + 10 * 60 * 1000;
-      await existingUser.save();
-
-      await sendEmail({
-        email: existingUser.email,
-        subject: "Verify Your Email - FarmDirect",
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e1e1e1; padding: 20px; border-radius: 10px;">
-            <h2 style="color: #10b981; text-align: center;">Welcome Back to FarmDirect!</h2>
-            <p>Hello <strong>${existingUser.firstName}</strong>,</p>
-            <p>It looks like you previously started the signup process. Please use the OTP below to verify your email and activate your account:</p>
-            <div style="background-color: #f0fdf4; border: 2px dashed #10b981; padding: 20px; text-align: center; font-size: 32px; font-weight: bold; letter-spacing: 5px; color: #059669; margin: 20px 0;">
-              ${otp}
-            </div>
-            <p style="color: #64748b; font-size: 14px;">This OTP is valid for 10 minutes.</p>
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
-            <p style="font-size: 12px; color: #94a3b8; text-align: center;">FarmDirect Team</p>
-          </div>
-        `,
-      });
-
-      return res.status(201).json({
-        success: true,
-        message: "User already registered but not verified. New OTP sent.",
-        email: existingUser.email,
-      });
-    }
+    res.status(400);
+    throw new Error("User already exists with this email");
   }
 
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
