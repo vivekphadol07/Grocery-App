@@ -74,6 +74,16 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// TTL Index: Automatically delete unverified users after 24 hours
+// This keeps the database clean of "junk" signups that never verified their email
+userSchema.index(
+  { createdAt: 1 },
+  {
+    expireAfterSeconds: 86400, // 24 hours
+    partialFilterExpression: { isVerified: false },
+  }
+);
+
 userSchema.pre("save", async function hashPassword(next) {
   if (!this.isModified("password")) {
     next();
