@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { useNavigate, Link } from "react-router-dom"; 
+import { useNavigate, Link, useLocation } from "react-router-dom"; 
 import { useAppContext } from "../../context/AppContext";
 import { FiMail, FiShield, FiArrowRight, FiRefreshCw } from "react-icons/fi";
 
 export const Signup = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { signup, verifyEmail, resendVerification } = useAppContext();
 
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
-    email: "",
+    email: location.state?.email || "",
     password: "",
     confirmPassword: "",
   });
@@ -22,9 +23,16 @@ export const Signup = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Verification State
-  const [isVerifying, setIsVerifying] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(location.state?.isVerifying || false);
   const [otp, setOtp] = useState("");
   const [isResending, setIsResending] = useState(false);
+
+  // Auto-resend OTP if coming from login
+  useEffect(() => {
+    if (location.state?.fromLogin && location.state?.email) {
+      handleResend();
+    }
+  }, []);
 
   function changeHandler(event) {
     setFormData((prevData) => ({
@@ -143,12 +151,21 @@ export const Signup = () => {
                     </button>
                 </div>
 
-                <button 
-                    onClick={() => setIsVerifying(false)}
-                    className="mt-8 text-slate-400 font-bold text-xs hover:text-slate-600 transition-colors"
-                >
-                    Back to Signup
-                </button>
+                {location.state?.fromLogin ? (
+                  <button 
+                      onClick={() => navigate("/login")}
+                      className="mt-8 text-slate-400 font-bold text-xs hover:text-slate-600 transition-colors"
+                  >
+                      Back to Login
+                  </button>
+                ) : (
+                  <button 
+                      onClick={() => setIsVerifying(false)}
+                      className="mt-8 text-slate-400 font-bold text-xs hover:text-slate-600 transition-colors"
+                  >
+                      Back to Signup
+                  </button>
+                )}
             </div>
         </div>
     );

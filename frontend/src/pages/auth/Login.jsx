@@ -35,7 +35,18 @@ export const Login = () => {
         navigate("/");
       }
     } catch (error) {
-      toast.error(error.message || "Login failed");
+      if (error.status === 403 && error.data?.isVerified === false) {
+        toast.error("Please verify your email first");
+        navigate("/signup", { 
+          state: { 
+            email: error.data.email, 
+            isVerifying: true,
+            fromLogin: true 
+          } 
+        });
+      } else {
+        toast.error(error.message || "Login failed");
+      }
     } finally {
       setIsSubmitting(false);
     }
